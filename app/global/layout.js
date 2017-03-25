@@ -6,6 +6,7 @@
 
 // global spacing - To be used for margins, paddings, and separation in between elements
 const GLOBAL_SPACING = {
+  XXS: 4,
   XS: 8,
   S: 16,
   M: 24,
@@ -23,7 +24,8 @@ const GLOBAL_HEIGHT = {
   LIST_ITEM: 72,
   NAVIGATION_DRAWER_ITEM: 48,
   BUTTON: 36,
-  TOUCH_TARGET: 48
+  TOUCH_TARGET: 48,
+  HEADER_ICON: 24
 }
 
 global.GLOBAL_SPACING = GLOBAL_SPACING;

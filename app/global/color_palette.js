@@ -31,8 +31,8 @@ const BACKGROUND_COLOR = {
 
 // icon color
 const ICON_COLOR = {
-  active: { LIGHT: 'rgba(255, 255, 255, 1.0)', DARK: 'rgba(0, 0, 0, 0.54)'},
-  inactive: { LIGHT: 'rgba(255, 255, 255, 0.5)', DARK: 'rgba(0, 0, 0, 0.38)'}
+  ACTIVE: { LIGHT: 'rgba(255, 255, 255, 1.0)', DARK: 'rgba(0, 0, 0, 0.54)'},
+  INACTIVE: { LIGHT: 'rgba(255, 255, 255, 0.5)', DARK: 'rgba(0, 0, 0, 0.38)'}
 }
 
 // "OK" and "error" colors to be applied to forms after validation
