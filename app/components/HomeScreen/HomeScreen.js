@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, StatusBar, ScrollView, Platform} from 'react-native';
+import {View, Text, Button, StatusBar, ScrollView, Platform, Modal} from 'react-native';
 import { LeftHeaderControls, RightHeaderControls } from './HomeScreenHeaderControls.js';
 import styles from './HomeScreen.style.js';
 
@@ -16,13 +16,19 @@ class HomeScreen extends React.Component {
       style: styles.header,
       titleStyle: styles.title,
       left: <LeftHeaderControls onMenuButtonPress={() => navigate('DrawerOpen')} />,
-      right: <RightHeaderControls onAddButtonPress={this.onAddListPress} />,
+      right: <RightHeaderControls onAddButtonPress={() => this.onAddListPress()} />,
       backTitle: null
     })
   };
 
+  static lists = [];  // Array of grocery lists
+
   constructor(props) {
     super(props);
+
+    this.state = {
+      addListModalVisible: false
+    }
 
     // function binding
     this.onAddListPress = this.onAddListPress.bind(this);
@@ -36,6 +42,24 @@ class HomeScreen extends React.Component {
         {Platform.OS === 'android' &&
           <StatusBar backgroundColor={PRIMARY_COLOR.DARK} />
         }
+
+        <Modal animationType="slide"
+               transparent={false}
+               visible={this.state.addListModalVisible}
+               onRequestClose={() => {alert("Modal has been closed.")}}>
+         <View style={{marginTop: 22}}>
+          <View>
+            <Text>Hello World!</Text>
+
+            {/*<TouchableHighlight onPress={() => {
+              this.setModalVisible(!this.state.modalVisible)
+            }}>
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>*/}
+
+          </View>
+         </View>
+        </Modal>
 
         <ScrollView>
           <Text>List 1</Text>
@@ -59,8 +83,9 @@ class HomeScreen extends React.Component {
   }
 
   onAddListPress() {
-    // create list
     alert('create list');
+    // create list
+    // this.setState({addListModalVisible: true});
   }
 
   onOpenDrawerPress() {

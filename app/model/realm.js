@@ -29,9 +29,9 @@ const ItemCategorySchema = {
 //----- Item (example: tomato, tonic water, etc.) -----//
 const ItemSchema = {
   name: 'Item',
-  primaryKey: 'name',
+  primaryKey: 'id',
   properties: {
-    name: 'string',
+    id: 'int',
     en: 'string', // english translation
     es: 'string', // spanish translation
     category: 'ItemCategory'
